@@ -1,0 +1,40 @@
+<!-- Top navigation -->
+<!-- Navbar -->
+  <header>
+    <section class="top-nav">
+      <div class="logo">
+        <a routerLink="/home"><img src="../../../assets/images/Logo.png"  alt="Mi Logo"></a>
+      </div>
+      <input id="menu-toggle" type="checkbox" />
+      <label class='menu-button-container' for="menu-toggle">
+        <div class='menu-button'></div>
+      </label>
+      <ul class="menu">
+        <li routerLink="home" routerLinkActive="hover"><a href="" routerLink="/home" routerLinkActive="active">Inicio</a></li>
+        <li routerLink="movies" routerLinkActive="hover"><a href="" [routerLink]="['/movies', '1']" routerLinkActive="active">Peliculas</a></li>
+        <li routerLink="series" routerLinkActive="hover"><a href="" [routerLink]="['/series', '1']" routerLinkActive="active">Series</a></li>
+        <li>
+          <form [formGroup]="searchForm" (ngSubmit)="submitForm()">
+            <div class="searchNav">
+                <input type="text" class="form-control" formControlName="name" placeholder="Buscar película, serie..." >
+                <button class="search"><i class="bi bi-search"></i></button>
+            </div>
+          </form>
+        </li>
+        <li>
+          <div class="dropdown" *ngIf="authService.UserData as user; else showLogin">
+            <button class="btn btn-primary profile" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{(user.displayName) ? user.displayName : 'Usuario'}}
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="" routerLink="profile">Perfil</a></li>
+              <li><button (click)="authService.Logout()" class="dropdown-item">Cerrar sesión</button></li>
+            </ul>
+          </div>
+          <ng-template #showLogin>
+              <li routerLink="login" routerLinkActive="hover"><a href="" routerLink="/login" routerLinkActive="active">Iniciar sesión</a></li>
+          </ng-template>
+        </li>
+      </ul>
+    </section>
+  </header>

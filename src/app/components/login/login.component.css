@@ -1,0 +1,71 @@
+.section{
+    background-image: url(../../../assets/images/About-meBackground.svg);
+    height: 55em;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container{
+    width: 450px;
+    height: min-content;
+    padding: 60px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background: rgba(0, 19, 41, 0.25);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid #20a8ff;
+    box-shadow: 0px 0px 10px 0px rgba(0,140,255,0.75);
+        -webkit-box-shadow: 0px 0px 10px 0px rgba(0,140,255,0.75);
+        -moz-box-shadow: 0px 0px 10px 0px rgba(0,140,255,0.75);
+}
+
+.form-control{
+    width: 300px;
+    background-color: #006edf;
+    border: 2px solid white;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0,140,255,0.75);
+        -webkit-box-shadow: 0px 0px 10px 0px rgba(0,140,255,0.75);
+        -moz-box-shadow: 0px 0px 10px 0px rgba(0,140,255,0.75);
+}
+
+.form-control::placeholder{
+    color: #e7e7e7;
+}
+
+p, button{
+    background-color: #003c7a;
+    border-radius: 15px;
+    border: 1px solid #20a8ff;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 0px rgba(0,140,255,0.75);
+        -webkit-box-shadow: 0px 0px 10px 0px rgba(0,140,255,0.75);
+        -moz-box-shadow: 0px 0px 10px 0px rgba(0,140,255,0.75);
+}
+
+a{
+    color: white;
+    font-weight: bold;
+    padding-left: 10px;
+}
+a:hover, button:hover{
+    color: #20a8ff;
+}
+a:active, button:active{
+    color: #20a8ff;
+}

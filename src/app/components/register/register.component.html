@@ -1,0 +1,16 @@
+<div class="section">
+  <div class="login-container">
+    <h2>Registro</h2>
+    <!-- Email input -->
+    <label for="email">Correo:</label>
+    <div class="formGroup">
+      <input type="email" class="form-control" placeholder="Email" #userEmail required>
+    </div>
+    <!-- Password input -->
+    <label for="password">Contraseña:</label>
+    <div class="formGroup">
+      <input type="password" class="form-control" placeholder="Password" #userPassword required>
+    </div>
+    <button type="button" (click)="authService.Register(userEmail.value, userPassword.value)">Registrarse</button>
+  </div>
+</div>

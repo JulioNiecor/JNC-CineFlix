@@ -1,0 +1,44 @@
+[[redirects]]
+  from = "/login"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/register"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/home"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/details/:media_type/:id"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/movies/:page"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/series/:page"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/search/:name"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/profile"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

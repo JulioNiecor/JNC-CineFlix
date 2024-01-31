@@ -1,0 +1,22 @@
+<footer>
+    <div class="content">
+      <div class="pages">
+        <ul>
+          <li routerLink="home" routerLinkActive="hover"><a href="" routerLink="/home" routerLinkActive="active">Inicio</a></li>
+          <li routerLink="movies" routerLinkActive="hover"><a href="" [routerLink]="['/movies', '1']" routerLinkActive="active">Peliculas</a></li>
+          <li routerLink="series" routerLinkActive="hover"><a href="" [routerLink]="['/series', '1']" routerLinkActive="active">Series</a></li>
+        </ul>
+      </div>
+      <div class="form">
+        <form [formGroup]="searchForm" (ngSubmit)="submitForm()">
+          <div class="searchNav">
+              <input type="text" class="form-control" formControlName="name" placeholder="Buscar" >
+              <button class="search"><i class="bi bi-search"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="name">
+      © 2024 Julio Nieto
+    </div>
+</footer>

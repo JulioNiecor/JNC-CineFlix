@@ -1,0 +1,27 @@
+<div class="sections">
+
+    <form [formGroup]="searchForm" (ngSubmit)="submitForm()">
+        <div class="search">
+            <input type="text" class="form-control" formControlName="name" placeholder="Buscar" >
+            <button><i class="bi bi-search"></i></button>
+        </div>
+    </form>
+
+    <!-- search result start -->
+    <div class="section">
+        <div class="content">
+        <h3 class="text-white">Búsqueda</h3>
+        <div class="cards">
+            <div class="card text-bg-dark" *ngFor="let res of searchResult;let i=index" >
+                <img src="https://image.tmdb.org/t/p/original/{{ res.poster_path }}" class="card-img" alt="{{ res.title }}" *ngIf="res.poster_path != null">
+                <div class="card-img-overlay" [routerLink]="['/details', res.media_type, res.id]">
+                    <p class="card-text"><small>{{ res.release_date }}{{ res.first_air_date }}</small></p>
+                    <h6 class="card-title">{{ res.title }}</h6><h6 class="card-title">{{ res.name }}</h6>             
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- search result end -->
+    
+</div>

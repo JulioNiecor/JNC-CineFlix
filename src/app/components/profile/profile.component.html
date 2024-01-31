@@ -1,0 +1,43 @@
+<div *ngIf="user">
+    <div class="sections">
+  
+      <div class="section info">
+        <h2>Perfil de {{ user.displayName || user.email }}</h2>
+        <p>Correo electrónico: {{ user.email }}</p>
+      </div>
+  
+      <!-- <div class="section list">
+        <div *ngIf="this.movies.length > 0; else noMovies">
+          <h2>{{this.movies.length}} Películas  en tu lista:</h2>
+          <table>
+            <tr *ngFor="let movie of this.movies">
+                <td><a [routerLink]="['/details', 'movie', movie.id]"><img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="{{ movie.title }}"></a></td>
+                <td>{{ movie.title }}</td>
+            </tr>
+          </table>
+        </div>
+        
+        <ng-template #noMovies>
+          <p>No hay películas en tu lista.</p>
+        </ng-template>
+  
+        <div *ngIf="this.series.length > 0; else noSeries">
+          <h2>{{this.series.length}} Series  en tu lista:</h2>
+          <table>
+            <tr *ngFor="let serie of this.series">
+                <td><a [routerLink]="['/details', 'tv', serie.id]"><img src="https://image.tmdb.org/t/p/original/{{ serie.poster_path }}" alt="{{ serie.name }}"></a></td>
+                <td>{{ serie.name }}</td>
+            </tr>
+          </table>
+        </div>
+        
+        <ng-template #noSeries>
+          <p>No hay series en tu lista.</p>
+        </ng-template>
+      </div> -->
+    </div>
+  </div>
+  <div *ngIf="!user">
+    <p>Por favor, inicia sesión para ver tu perfil.</p>
+  </div>
+    

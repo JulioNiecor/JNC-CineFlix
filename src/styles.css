@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #006EDF #003C7A;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 0px;
+  background-color: #003C7A;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #003C7A;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #003C7A;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+  background-color: #006EDF;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #008CFF;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #008cff;
+}
+  
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #001329;
+    overflow-x: hidden;
+}
+html, body { height: 100%; }
+body { margin: 0; 
+  /* font-family: Roboto, "Helvetica Neue", sans-serif; } */
+  font-family: Poppins, sans-serif; }

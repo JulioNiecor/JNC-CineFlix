@@ -1,0 +1,23 @@
+<div class="sections">
+    <!-- series start -->
+  <div class="section">
+    <div class="content">
+      <h3 class="text-white">Series</h3>
+      <div class="cards">
+        <div class="card text-bg-dark fade-in" *ngFor="let serie of seriesResult | async">
+          <img src="https://image.tmdb.org/t/p/original/{{ serie.poster_path }}" class="card-img" alt="{{ serie.name }}">
+          <div class="card-img-overlay" [routerLink]="['/details', 'tv', serie.id]">
+            <p class="card-text"><small>{{ serie.first_air_date }}</small></p>
+            <h6 class="card-title">{{ serie.name }}</h6>            
+          </div>
+        </div>
+      </div>
+      <div class="pagination">
+        <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Anterior</button>
+        <span>{{ currentPage }} de {{ totalPages }}</span>
+        <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages">Siguiente</button>
+      </div>
+    </div>
+  </div>
+  <!-- series end -->
+</div>

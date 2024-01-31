@@ -1,0 +1,94 @@
+<!-- banner start -->
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item" data-bs-interval="10000" *ngFor="let banner of bannerResult;let i=index" [ngClass]="{active:i===1}">
+        <img src="https://image.tmdb.org/t/p/original/{{ banner.backdrop_path }}" class="d-block w-100" alt="..." [routerLink]="['/details', banner.media_type, banner.id]">
+        <div class="carousel-caption">
+          <h1>{{banner.title}}</h1><h1>{{banner.name}}</h1>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+  <!-- banner end -->
+  <div class="sections">
+    <!-- trending movies start -->
+    <div class="section">
+      <div class="content">
+        <h3 class="text-white">Películas en tendencia</h3>
+        <div #rowPoster1 class="rowPoster mt-3 p-2" (mousedown)="onMouseDown($event, rowPoster1)"
+        (mouseup)="onMouseUp()"
+        (mouseleave)="onMouseLeave()"
+        (mousemove)="onMouseMove($event, rowPoster1)">
+          <div class="container" *ngFor="let trendingMovie of trendingMoviesResult;let i=index">
+            <img src="https://image.tmdb.org/t/p/original/{{ trendingMovie.poster_path }}" class="rowImg largePoster" alt="{{ trendingMovie.title }}" [routerLink]="['/details', trendingMovie.media_type, trendingMovie.id]">
+            <div class="index">{{i + 1}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- trending movies end -->
+    <!-- trending series start -->
+    <div class="section">
+      <div class="content">
+        <h3 class="text-white">Series en tendencia</h3>
+        <div #rowPoster2 class="rowPoster mt-3 p-2" (mousedown)="onMouseDown($event, rowPoster2)"
+        (mouseup)="onMouseUp()"
+        (mouseleave)="onMouseLeave()"
+        (mousemove)="onMouseMove($event, rowPoster2)">
+          <div class="container" *ngFor="let trendingSerie of trendingSeriesResult;let i=index">
+            <img src="https://image.tmdb.org/t/p/original/{{ trendingSerie.poster_path }}" class="rowImg largePoster" alt="{{ trendingSerie.name }}" [routerLink]="['/details', trendingSerie.media_type, trendingSerie.id]">
+            <div class="index">{{i + 1}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- trending series end -->
+  
+    <!-- movies start -->
+    <div class="section">
+      <div class="content">
+        <h3 class="text-white">Películas</h3>
+        <div class="cards">
+          <div class="card text-bg-dark" *ngFor="let movie of moviesResult;let i=index">
+            <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" class="card-img" alt="{{ movie.title }}">
+            <div class="card-img-overlay" [routerLink]="['/details', 'movie', movie.id]">
+              <p class="card-text"><small>{{ movie.release_date }}</small></p>
+              <h6 class="card-title">{{ movie.title }}</h6>            
+            </div>
+          </div>
+          <div class="more">
+            <a [routerLink]="['/movies', '1']">Ver más</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- movies end -->
+  
+    <!-- series start -->
+    <div class="section">
+      <div class="content">
+        <h3 class="text-white">Series</h3>
+        <div class="cards">
+          <div class="card text-bg-dark" *ngFor="let serie of seriesResult;let i=index">
+            <img src="https://image.tmdb.org/t/p/original/{{ serie.poster_path }}" class="card-img" alt="{{ serie.name }}">
+            <div class="card-img-overlay" [routerLink]="['/details', 'tv', serie.id]">
+              <p class="card-text"><small>{{ serie.first_air_date }}</small></p>
+              <h6 class="card-title">{{ serie.name }}</h6>            
+            </div>
+          </div>
+          <div class="more">
+            <a [routerLink]="['/series', '1']">Ver más</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- series end -->
+</div>

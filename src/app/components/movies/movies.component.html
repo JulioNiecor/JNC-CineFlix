@@ -1,0 +1,23 @@
+<div class="sections">
+    <!-- movies start -->
+  <div class="section">
+    <div class="content">
+      <h3 class="text-white">Películas</h3>
+      <div class="cards">
+        <div class="card text-bg-dark fade-in" *ngFor="let movie of moviesResult | async">
+          <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" class="card-img" alt="{{ movie.title }}">
+          <div class="card-img-overlay" [routerLink]="['/details', 'movie', movie.id]">
+            <p class="card-text"><small>{{ movie.release_date }}</small></p>
+            <h6 class="card-title">{{ movie.title }}</h6>            
+          </div>
+        </div>
+      </div>
+      <div class="pagination">
+        <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Anterior</button>
+        <span>{{ currentPage }} de {{ totalPages }}</span>
+        <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages">Siguiente</button>
+      </div>
+    </div>
+  </div>
+  <!-- movies end -->
+</div>
